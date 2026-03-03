@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gallery - Abhaysinhraje Bhonsle Institute Of Technology (Polytechnic)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --primary-color: #1e3c72;
+      --secondary-color: #2a5298;
+      --accent-color: #ff6b6b;
+      --success-color: #28a745;
+      --warning-color: #ffc107;
+      --info-color: #17a2b8;
+      --light-color: #f8f9fa;
+      --dark-color: #2c3e50;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .top-bar {
+      background-color: #002855;
+      color: white;
+      padding: 5px 15px;
+      font-size: 14px;
+    }
+
+    .college-name {
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    .college-name h2, .college-name h5, .college-name h6 {
+      margin: 0;
+    }
+
+    .navbar {
+      background-color: #003865;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+
+    .marquee-container {
+      background: #ffc107;
+      padding: 6px;
+      font-weight: bold;
+    }
+
+    .history_section {
+      padding: 80px 15px;
+      background: linear-gradient(135deg, #ffffff, #f1f5f9);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 1200px;
+    }
+
+    .message-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .message-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(45deg, var(--accent-color), var(--warning-color));
+      border-radius: 2px;
+    }
+
+    .image-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      width: 80%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-section p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #34495e;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .footer {
+      background-color: #111;
+      color: white;
+      padding: 40px 20px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+    }
+
+    .footer-col {
+      flex: 1;
+      min-width: 220px;
+      margin: 20px;
+    }
+
+    .footer h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer ul li {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .footer ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .footer ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .contact i {
+      margin-right: 8px;
+    }
+
+    .footer .social-icons a i {
+      font-size: 20px;
+      margin-right: 15px;
+      color: white;
+      background-color: #222;
+      padding: 8px 10px;
+      border-radius: 5px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: 0;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 14px;
+      border-top: 1px solid #333;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 992px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .history_section {
+        padding: 40px 15px;
+      }
+
+      .message-title {
+        font-size: 2rem;
+      }
+
+      .about-section p {
+        font-size: 1rem;
+      }
+
+      .image-section img {
+        width: 90%;
+      }
+    }
+.top-bar {
+  background-color: #002855;
+  color: white;
+  padding: 5px 15px;
+  font-size: 14px;
+}
+
+/* College Name Section */
+.college-name {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.college-name h2, .college-name h5, .college-name h6 {
+  margin: 0;
+}
+
+/* Navbar */
+.navbar, .navbar-custom {
+  background-color: #003865;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-custom.scrolled {
+  padding: 0.2rem 0;
+  background: rgba(30, 60, 114, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+  background: rgba(255,255,255,0.3);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: white !important;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, var(--accent-color), var(--warning-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.college-info h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.college-info small {
+  opacity: 0.9;
+  font-size: 0.8rem;
+}
+
+/* Marquee */
+.marquee-container {
+  background: #ffc107;
+  padding: 6px;
+  font-weight: bold;
+}
+
+/* History Section */
+.history_section {
+  padding: 80px 15px;
+  background: linear-gradient(135deg, #ffffff, #f1f5f9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Message Title */
+.message-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.message-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(45deg, var(--accent-color), var(--warning-color));
+  border-radius: 2px;
+}
+
+/* Image Section */
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.image-section img {
+  max-width: 100%;
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* About Section */
+.about-section p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #34495e;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Footer */
+.footer {
+  background-color: #111;
+  color: white;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+  margin: 20px;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer .contact i {
+  margin-right: 8px;
+}
+
+.footer .social-icons a i {
+  font-size: 20px;
+  margin-right: 15px;
+  color: white;
+  background-color: #222;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 14px;
+  border-top: 1px solid #333;
+  margin-top: 20px;
+}
+
+/* Responsive Footer */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* HOD Table */
+.hod-table {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.hod-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hod-table th,
+.hod-table td {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.hod-table th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+.hod-table tr:nth-child(even) {
+  background-color: var(--light-color);
+}
+
+.hod-table tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Misc */
+.carousel-inner img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+section {
+  padding: 30px 20px;
+}
+
+iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+}
+
+.title-bar {
+  background-color: #e9ecef;
+  padding: 15px;
+  margin-top: 20px;
+  border-left: 5px solid #003865;
+}
+
+.recruiters img {
+  height: 60px;
+  margin: 10px;
+}
+
+.btn-sm {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.leadership-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.feature-icon img,
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .history_section {
+    padding: 40px 15px;
+  }
+
+  .message-title {
+    font-size: 2rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+  }
+
+  .image-section img {
+    width: 90%;
+  }
+}
+        .option-card {
+            transition: transform 0.3s;
+        }
+        .option-card:hover {
+            transform: scale(1.05);
+        }
+.newfont {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.hero-section-new {
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+.option-card {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.custom-card-img {
+  height: 200px;
+  width: 100%;
+  object-fit: contain; /* ensures the entire image fits without cropping */
+  padding: 10px; /* optional, gives spacing around the image */
+  background-color: #f8f9fa; /* optional: neutral background if image doesn't fill area */
+  border-radius: 8px;
+}
+
+.row.gx-2 {
+  --bs-gutter-x: 0.5rem;
+}
+           .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: #bfe016;
+      padding: 10px 0;
+      font-family: Arial, sans-serif;
+    }
+
+
+    .marquee-content {
+      display: inline-block;
+      animation: marquee 30s linear infinite;
+    }
+
+    .marquee-content span {
+      margin: 0 30px;
+      cursor: pointer;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .marquee-content span:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .marquee-container:hover .marquee-content {
+      animation-play-state: paused;
+    }
+        
+
+  </style>
+</head>
+<body>
+
+ <!-- Top Bar -->
+  <div class="top-bar d-flex justify-content-between">
+    <div>Email: ahitpoly@gmail.com | Phone: (02162)-279661</div>
+    <div>DTE Code: 6433 | MSBTE Code: 0983</div>
+  </div>
+
+  <!-- College Header -->
+  <div class="college-name">
+    <img src="../Uploads/vlogo.png" alt="College Logo" width="100" /> <br>
+    <h4>Vidyavardhini Charitable Trust</h4>
+    <h2><b>Abhaysinhraje Bhonsle Institute Of Technology (Polytechnic) Shahunagar-Shendre</b></h2><br>
+    <h5><b>(अभयसिंहराजे भोसले इन्स्टिट्यूट ऑफ टेक्नॉलॉजी, शाहूनगर-शेन्द्रे)</b></h5>
+    <h6>Approved by AICTE , New Delhi, Directorate of Technical Education, Mumbai, Government of Maharashtra, Affiliated to MSBTE, Mumbai.</h6>
+    
+  </div>
+  <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About Us
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="../about/history.html">History</a></li>
+              <li><a class="dropdown-item" href="../about/visionmg.html">Vision, Mission & Goal</a></li>
+              <li><a class="dropdown-item" href="../about/boardofgri.html">Board of Grievience</a></li>
+            </ul>
+          </li>
+
+  <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+         Administration
+        </a>
+    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+        <li><a class="dropdown-item" href="../administartion/president_message.html">President Message</a></li>
+      <li><a class="dropdown-item" href="../administartion/principal_message.html">Principal Message</a></li>
+      <li><a class="dropdown-item" href="../administartion/head_of_departements.html">Head Of Departments</a></li>
+      <li><a class="dropdown-item" href="../administartion/administrative_staff.html">Administrative Staff</a></li>
+    </ul>
+  </li>
+
+         <li class="nav-item"><a class="nav-link" href="../departments/departments.html">Departments</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Admission
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="../admission/process.html">Process</a></li>
+              <li><a class="dropdown-item" href="../admission/coursesaintake.html">Courses and Intake</a></li>
+                <li><a class="dropdown-item" href="../admission/feestructure.html">Fee Structure</a></li>
+              <li><a class="dropdown-item" href="../admission/schlorship.html">Scholorship</a></li>
+            </ul>
+          </li>
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Academics
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="../academics/academiccal.html">Academic Calender</a></li>
+                  <li><a class="dropdown-item" href="../academics/facilities.html">Facilities</a></li>
+              <li><a class="dropdown-item" href="../academics/examination.html">Examination</a></li>
+              <li><a class="dropdown-item" href="../academics/traningandplace.html">T&P</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../gallery/gallery.html">Gallery</a></li>
+      <li class="nav-item"><a class="nav-link" href="../contact/contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="../eoa/eoa.html">EOA</a></li>
+           <li class="nav-item"><a class="nav-link" href="#"></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <!-- Marquee-->
+ <div class="marquee-container">
+    <div class="marquee-content">
+      <span onclick="window.location.href='../admission/process.html'">🎓 Admission Open for Post SSC First Year Diploma 2025</span>
+   <span onclick="window.location.href='../admission/feestructure.html'">📄 Fee Structue</span>
+      <span onclick="window.location.href='../gallery/blog.html'">🏆 Toppers 2024 Announced!</span>
+    </div>
+  </div>
+
+  <script>
+    // Duplicate content to create seamless loop
+    const marqueeContent = document.querySelector('.marquee-content');
+    marqueeContent.innerHTML += marqueeContent.innerHTML;
+
+    // Reset animation for smooth looping
+    marqueeContent.addEventListener('animationiteration', () => {
+      marqueeContent.style.transform = 'translateX(0)';
+      marqueeContent.offsetWidth; // Trigger reflow
+    });
+  </script>
+
+
+
+    <div class="hero-section-new">
+        <h1 class="newfont">Welcome to Our College Gallery </h1>
+    </div>
+
+<div class="container my-5">
+  <div class="row justify-content-center gx-2 gy-2">
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card option-card shadow text-center">
+        <img src="../uploads/gallery/education blog.png" class="card-img-top custom-card-img" alt="Blog">
+        <div class="card-body">
+          <h4 class="card-title">Blog</h4>
+          <p class="card-text">Explore our college events with photos and detailed descriptions.</p>
+          <a href="./blog.html" class="btn btn-primary">Visit Blog</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card option-card shadow text-center">
+        <img src="../uploads/gallery.png" class="card-img-top custom-card-img" alt="Gallery">
+        <div class="card-body">
+          <h4 class="card-title">Gallery</h4>
+          <p class="card-text">Browse through our collection of college event photos.</p>
+          <a href="photos.html" class="btn btn-primary">Visit Gallery</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h3>ABIT Polytechnic, Satara</h3>
+        <p><strong>Address</strong></p>
+        <p>Abhaysinhraje Bhonsle Institute<br>of Technology(Polytechnic)</p>
+        <p>Shendre, Satara</p>
+        <p>Taluka-Satara</p>
+        <p>District-Satara 415002</p>
+        <p>State-Maharashtra</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h3>Abhaysinhraje Bhonsle Institute<br>of Technology(Polytechnic)</h3>
+        <p class="contact"><i class="fas fa-phone fa-lg me-2"></i> 9112287287, 02162-279661</p>
+        <p class="contact"><i class="fas fa-envelope fa-lg me-2"></i> abit@gmail.com</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/abit_polytechnic_shendre/" target="_blank" class="social-link"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="https://youtube.com/@warriorvijay?si=timFJ9s0VVYnfODr" target="_blank" class="social-link"><i class="fab fa-youtube fa-2x"></i></a>
+          <a href="https://www.facebook.com/vvct.in" target="_blank" class="social-link"><i class="fab fa-facebook-f fa-2x"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank" class="social-link"><i class="fab fa-linkedin-in fa-2x"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h3>Important Links</h3>
+        <ul>
+          <li><a href="https://dte.maharashtra.gov.in/">Directorate Of Technical Education Maharashtra</a></li>
+          <li><a href="https://msbte.ac.in/">Maharashtra State Board Of Technical Education (MSBTE)</a></li>
+          <li><a href="https://share.google/DAoZvw3Pbt1vlnCT1" target="_blank">Maharashtra Government</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../departments/departments.html">Departments</a></li>
+          <li><a href="../admission/feestructure.html">Fee Structure</a></li>
+          <li><a href="../admission/schlorship.html">Scholarships</a></li>
+          <li><a href="../academics/examination.html">Examination</a></li>
+          <li><a href="../academics/facilities.html">Facilities</a></li>
+          <li><a href="../gallery/blog.html">Blogs</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 5 (Map) -->
+      <div class="footer-col">
+        <h3>Location</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.515198832577!2d74.01496367522522!3d17.625741595894763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc23a635c9b45ef%3A0x7ffc37f6c8b9e52a!2sAbhaysinhraje%20Bhonsle%20Institute%20Of%20Technology%20(Polytechnic)!5e0!3m2!1sen!2sin!4v1750669049691!5m2!1sen!2sin" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="copyright">
+      Copyright © 2025 Abhaysinhraje Bhonsle Institute Of Technology (Polytechnic), Shahunagar-Shendre. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ITI - Abhaysinhraje Bhonsle Institute Of Technology (Polytechnic)</title>
+      <link rel="icon" type="image/x-icon" href="../uploads/vlogo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --primary-color: #1e3c72;
+      --secondary-color: #2a5298;
+      --accent-color: #ff6b6b;
+      --success-color: #28a745;
+      --warning-color: #ffc107;
+      --info-color: #17a2b8;
+      --light-color: #f8f9fa;
+      --dark-color: #2c3e50;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .top-bar {
+      background-color: #002855;
+      color: white;
+      padding: 5px 15px;
+      font-size: 14px;
+    }
+
+    .college-name {
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    .college-name h2, .college-name h5, .college-name h6 {
+      margin: 0;
+    }
+
+    .navbar {
+      background-color: #003865;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+
+    .marquee-container {
+      background: #ffc107;
+      padding: 6px;
+      font-weight: bold;
+    }
+
+    .history_section {
+      padding: 80px 15px;
+      background: linear-gradient(135deg, #ffffff, #f1f5f9);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 1200px;
+    }
+
+    .message-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .message-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(45deg, var(--accent-color), var(--warning-color));
+      border-radius: 2px;
+    }
+
+    .image-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      width: 80%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-section p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #34495e;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .footer {
+      background-color: #111;
+      color: white;
+      padding: 40px 20px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+    }
+
+    .footer-col {
+      flex: 1;
+      min-width: 220px;
+      margin: 20px;
+    }
+
+    .footer h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer ul li {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .footer ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .footer ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .contact i {
+      margin-right: 8px;
+    }
+
+    .footer .social-icons a i {
+      font-size: 20px;
+      margin-right: 15px;
+      color: white;
+      background-color: #222;
+      padding: 8px 10px;
+      border-radius: 5px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: 0;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 14px;
+      border-top: 1px solid #333;
+      margin-top: 20px;
+    }
+.back-btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    color: #fff;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.back-btn:hover {
+    background: linear-gradient(90deg, #0056b3, #0099cc);
+    transform: scale(1.05);
+}
+.back-btn svg {
+    width: 18px;
+    height: 18px;
+}
+    @media (max-width: 992px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .history_section {
+        padding: 40px 15px;
+      }
+
+      .message-title {
+        font-size: 2rem;
+      }
+
+      .about-section p {
+        font-size: 1rem;
+      }
+
+      .image-section img {
+        width: 90%;
+      }
+    }
+.top-bar {
+  background-color: #002855;
+  color: white;
+  padding: 5px 15px;
+  font-size: 14px;
+}
+
+/* College Name Section */
+.college-name {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.college-name h2, .college-name h5, .college-name h6 {
+  margin: 0;
+}
+
+/* Navbar */
+.navbar, .navbar-custom {
+  background-color: #003865;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-custom.scrolled {
+  padding: 0.2rem 0;
+  background: rgba(30, 60, 114, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+  background: rgba(255,255,255,0.3);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: white !important;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, var(--accent-color), var(--warning-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.college-info h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.college-info small {
+  opacity: 0.9;
+  font-size: 0.8rem;
+}
+
+/* Marquee */
+.marquee-container {
+  background: #ffc107;
+  padding: 6px;
+  font-weight: bold;
+}
+
+/* History Section */
+.history_section {
+  padding: 80px 15px;
+  background: linear-gradient(135deg, #ffffff, #f1f5f9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Message Title */
+.message-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.message-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(45deg, var(--accent-color), var(--warning-color));
+  border-radius: 2px;
+}
+
+/* Image Section */
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.image-section img {
+  max-width: 100%;
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* About Section */
+.about-section p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #34495e;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Footer */
+.footer {
+  background-color: #111;
+  color: white;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+  margin: 20px;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer .contact i {
+  margin-right: 8px;
+}
+
+.footer .social-icons a i {
+  font-size: 20px;
+  margin-right: 15px;
+  color: white;
+  background-color: #222;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 14px;
+  border-top: 1px solid #333;
+  margin-top: 20px;
+}
+
+/* Responsive Footer */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* HOD Table */
+.hod-table {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.hod-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hod-table th,
+.hod-table td {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.hod-table th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+.hod-table tr:nth-child(even) {
+  background-color: var(--light-color);
+}
+
+.hod-table tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Misc */
+.carousel-inner img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+section {
+  padding: 30px 20px;
+}
+
+iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+}
+
+.title-bar {
+  background-color: #e9ecef;
+  padding: 15px;
+  margin-top: 20px;
+  border-left: 5px solid #003865;
+}
+
+.recruiters img {
+  height: 60px;
+  margin: 10px;
+}
+
+.btn-sm {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.leadership-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.feature-icon img,
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .history_section {
+    padding: 40px 15px;
+  }
+
+  .message-title {
+    font-size: 2rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+  }
+
+  .image-section img {
+    width: 90%;
+  }
+}
+    header {
+      background-color: #5f72be;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    section {
+      padding: 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.8em;
+      color: #444;
+    }
+
+    .hod-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .left-section {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .left-section img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .right-section {
+      flex: 2;
+      min-width: 280px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .aim-section, .vision-section, .mission-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .aim-section .img-box,
+    .vision-section .img-box,
+    .mission-section .img-box {
+      flex: 0 0 200px;
+    }
+
+    .aim-section .img-box img,
+    .vision-section .img-box img,
+    .mission-section .img-box img {
+      width: 100%;
+      max-width: 200px;
+    }
+
+    .aim-section .text-box,
+    .vision-section .text-box,
+    .mission-section .text-box {
+      flex: 1;
+    }
+
+    /* Our Prides Section */
+    .pride-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .pride-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.10);
+      width: 240px;
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+
+    .pride-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .pride-card .img-container {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .pride-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .pride-card h3 {
+      margin: 10px 0 4px;
+      color: #333;
+      font-size: 1em;
+    }
+
+    .pride-card p {
+      font-size: 1em;
+      color: #5f72be;
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin: 60px auto 40px;
+      font-size: 1em;
+      color: #5f72be;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .hod-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .right-section {
+        text-align: center;
+      }
+
+      .aim-section,
+      .vision-section,
+      .mission-section {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      color: #333;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background-color: #ff9800;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .hod-table table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .hod-table thead {
+      background-color: #273c75;
+      color: #fff;
+    }
+
+    .hod-table th, .hod-table td {
+      padding: 15px 12px;
+      text-align: center;
+      vertical-align: middle;
+      border-bottom: 1px solid #e0e0e0;
+      font-size: 1em;
+    }
+
+    .hod-table th {
+      font-weight: bold;
+    }
+
+    .hod-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .hod-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .hod-table td div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin: 4px 0;
+      color: #333;
+    }
+
+    /* Font Awesome icons */
+    .fas {
+      color: #5f72be;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hod-table table, .hod-table thead, .hod-table tbody, .hod-table th, .hod-table td, .hod-table tr {
+        display: block;
+        width: 100%;
+      }
+
+      .hod-table tr {
+        margin-bottom: 15px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .hod-table thead {
+        display: none;
+      }
+
+      .hod-table td {
+        text-align: left;
+        border-bottom: none;
+        padding: 10px 8px;
+      }
+
+      .hod-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 4px;
+        color: #273c75;
+      }
+
+      .hod-table td div {
+        justify-content: flex-start;
+      }
+    }
+    /* HOD Section Wrapper */
+.hod-section {
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #ff9800;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+.slides {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide-img {
+  width: 100%;
+  flex-shrink: 0;
+  height: 400px;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInZoom 0.6s ease forwards;
+}
+
+/* Fade + Zoom animation */
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.horizontal-slider {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  border: 2px solid #ddd;
+}
+
+.slider-track img {
+  display: inline-block;
+  height: 200px; /* You can adjust the height */
+  margin-right: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.slider-track img:hover {
+  transform: scale(1.05);
+}
+          .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: #bfe016;
+      padding: 10px 0;
+      font-family: Arial, sans-serif;
+    }
+
+
+    .marquee-content {
+      display: inline-block;
+      animation: marquee 30s linear infinite;
+    }
+
+    .marquee-content span {
+      margin: 0 30px;
+      cursor: pointer;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .marquee-content span:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .marquee-container:hover .marquee-content {
+      animation-play-state: paused;
+    }
+     
+    
+.syllabus-table {
+  width: 100%;
+  max-width: 800px; /* Limits table width for better readability */
+  margin: 0 auto; /* Centers the table horizontally */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fefbfb;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+td div {
+  margin: 5px 0;
+}
+
+td a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  td div {
+    font-size: 14px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar d-flex justify-content-between">
+    <div>Email: ahitpoly@gmail.com | Phone: (02162)-279661</div>
+    <div>DTE Code: 6433 | MSBTE Code: 0983</div>
+  </div>
+
+  <!-- College Header -->
+  <div class="college-name">
+    <img src="../Uploads/vlogo.png" alt="College Logo" width="100" /> <br>
+    <h4>Vidyavardhini Charitable Trust</h4>
+    <h2><b>Abhaysinhraje Bhonsle Institute Of Technology (Polytechnic) Shahunagar-Shendre</b></h2><br>
+    <h5><b>(अभयसिंहराजे भोसले इन्स्टिट्यूट ऑफ टेक्नॉलॉजी, शाहूनगर-शेन्द्रे)</b></h5>
+    <h6>Approved by AICTE , New Delhi, Directorate of Technical Education, Mumbai, Government of Maharashtra, Affiliated to MSBTE, Mumbai.</h6>
+    
+  </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About Us
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="../about/history.html">History</a></li>
+              <li><a class="dropdown-item" href="../about/visionmg.html">Vision, Mission & Goal</a></li>
+              <li><a class="dropdown-item" href="../about/boardofgri.html">Board of Grievience</a></li>
+            </ul>
+          </li>
+
+  <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+         Administration
+        </a>
+    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+        <li><a class="dropdown-item" href="../administartion/president_message.html">President Message</a></li>
+      <li><a class="dropdown-item" href="../administartion/principal_message.html">Principal Message</a></li>
+      <li><a class="dropdown-item" href="../administartion/head_of_departements.html">Head Of Departments</a></li>
+      <li><a class="dropdown-item" href="../administartion/administrative_staff.html">Administrative Staff</a></li>
+    </ul>
+  </li>
+
+          <li class="nav-item"><a class="nav-link" href="./departments.html">Departments</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Admission
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="../admission/process.html">Process</a></li>
+              <li><a class="dropdown-item" href="../admission/coursesaintake.html">Courses and Intake</a></li>
+                <li><a class="dropdown-item" href="../admission/feestructure.html">Fee Structure</a></li>
+              <li><a class="dropdown-item" href="../admission/schlorship.html">Scholorship</a></li>
+            </ul>
+          </li>
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Academics
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="../academics/academiccal.html">Academic Calender</a></li>
+                  <li><a class="dropdown-item" href="../academics/facilities.html">Facilities</a></li>
+              <li><a class="dropdown-item" href="../academics/examination.html">Examination</a></li>
+              <li><a class="dropdown-item" href="../academics/traningandplace.html">T&P</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../gallery/gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="../contact/contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="../eoa/eoa.html">EOA</a></li>
+           <li class="nav-item"><a class="nav-link" href="#"></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <!-- Marquee-->
+ <div class="marquee-container">
+    <div class="marquee-content">
+      <span onclick="window.location.href='../admission/process.html'">🎓 Admission Open for Post SSC First Year Diploma 2025</span>
+   <span onclick="window.location.href='../admission/feestructure.html'">📄 Fee Structue</span>
+      <span onclick="window.location.href='../gallery/blog.html'">🏆 Toppers 2024 Announced!</span>
+    </div>
+  </div>
+
+
+  <script>
+    // Duplicate content to create seamless loop
+    const marqueeContent = document.querySelector('.marquee-content');
+    marqueeContent.innerHTML += marqueeContent.innerHTML;
+
+    // Reset animation for smooth looping
+    marqueeContent.addEventListener('animationiteration', () => {
+      marqueeContent.style.transform = 'translateX(0)';
+      marqueeContent.offsetWidth; // Trigger reflow
+    });
+  </script>
+
+  <header>
+    <h1>Industrial Training Institute (ITI) Department</h1>
+  </header>
+
+  <section>
+    <h2>About Industrial Training Institute (ITI) Department</h2>
+    <p>
+      The ITI department offers skill-based training focused on trades such as electrician, 
+      fitter, welder, and machinist. It is designed to provide hands-on vocational education 
+      that prepares students for direct employment in industries. With a focus on practical 
+      skills, safety standards, and productivity, the ITI department bridges the gap between 
+      academic learning and industrial needs.
+    </p>
+
+    <div class="hod-section">
+      <div class="left-section">
+        <img src="images/principal.jpg" alt="HOD's Photo">
+        <p style="text-align:center; font-weight:bold; margin-top:10px;">Mr.Kadam Suhas Shivajirao<br>Head of Department</p>
+      </div>
+
+      <div class="right-section">
+        <h2>H.O.D's Message</h2>
+        <hr />
+        <p>
+          Welcome to the Industrial Training Institute (ITI) at ABIT Polytechnic. Our objective is 
+          to provide high-quality vocational education and practical skills that meet industry standards. 
+          Through hands-on training in various trades, we prepare students for immediate employment and entrepreneurial 
+          opportunities in the technical workforce.
+        </p>
+        <p>
+          We emphasize discipline, skill development, and safety, ensuring that our trainees are industry-ready. 
+          I encourage every student to take full advantage of the resources provided, develop their talents, and 
+          become skilled professionals who contribute positively to the industrial sector.
+        </p>
+        <p>— H.O.D., ITI Department</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <h1 style="text-align:center;"><span>V</span>ision &amp; <span>M</span>ission</h1>
+    <hr />
+  </main>
+
+  <!-- vision Section -->
+  <section class="container">
+    <h2><span>V</span>ision</h2>
+    <div class="aim-section">
+      <div class="img-box">
+        <img src="../uploads/departments/vision.jpg" alt="vision Image">
+      </div>
+      <div class="text-box">
+        <ul>
+          <li>
+            Our aim at Abhaysinhraje Bhonsle Institute of Technology is to provide high-quality, 
+            industry-relevant technical education that empowers students from rural and semi-urban
+            areas. We focus on building technically skilled, ethically strong, and socially 
+            responsible professionals who can meet global challenges and contribute meaningfully
+            to society.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION Section -->
+  <section class="container">
+    <h2><span>M</span>ission</h2>
+    <div class="vision-section">
+        <div class="img-box">
+        <img src="../uploads/departments/mission.jpg" alt="goal Image">
+      </div>
+      <div class="text-box">
+        <ul>
+          <li>
+            To provide high-quality, industry-relevant technical education with a strong 
+            foundation in ethical values and social responsibility. We aim to empower 
+            students—especially from rural areas—with the skills, knowledge, and confidence
+            to excel in their careers, contribute to national development, and lead meaningful
+            lives.
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- GOAL Section -->
+  <section class="container">
+    <h2><span>G</span>oal</h2>
+    <div class="mission-section">
+      <div class="img-box">
+        <img src="../uploads/departments/goal.jpg" alt="Mission Image">
+      </div>
+      <div class="text-box">
+        <ul>
+          <li>
+            To become a premier institute recognized for excellence in technical education, 
+            innovation, and community service — empowering students from rural and semi-urban 
+            regions to become globally competent professionals and responsible citizens, 
+            while fostering a culture of lifelong learning, creativity, and ethical values.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Prides Section -->
+  <section>
+    <h2 style="text-align: center; color: #333;">Our Prides</h2>
+    <h3 style="text-align: center; color: #333;">SUMMER-2025</h3>
+    <h3 style="text-align: center; color: #333;">TY TOPPERS</h3>
+    <div class="pride-container">
+      <div class="pride-card">
+        <div class="img-container">
+          <img src="images/TY_TANUJA.png" alt="Student 1">
+        </div>
+        <h3>Ms. Thorat Tanuja Maykel</h3>
+        <p>94.31%</p>
+      </div>
+
+      <div class="pride-card">
+        <div class="img-container">
+          <img src="images/TY_PURVA.png" alt="Student 2">
+        </div>
+        <h3>Ms. Mohite Purva Dipak</h3>
+        <p>93.31%</p>
+      </div>
+
+      <div class="pride-card">
+        <div class="img-container">
+          <img src="images/TY_ANUJA.png" alt="Student 3">
+        </div>
+        <h3>Ms. Salunkhe Anuja Sanjay</h3>
+        <p>91.63%</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3 style="text-align: center; color: #333;">SY TOPPERS</h3>
+    <div class="pride-container">
+      <div class="pride-card">
+        <div class="img-container">
+          <img src="images/SY_ASMITA.png" alt="Student 1">
+        </div>
+        <h3>Ms. Shelar Asmita Laxman</h3>
+        <p>87.53%</p>
+      </div>
+
+      <div class="pride-card">
+        <div class="img-container">
+          <img src="images/SY_RESHMA.png" alt="Student 2">
+        </div>
+        <h3>Ms. Kadam Reshma Rajendra</h3>
+        <p>86.12%</p>
+      </div>
+
+      <div class="pride-card">
+        <div class="img-container">
+          <img src="images/SY_GITANJALI.png" alt="Student 3">
+        </div>
+        <h3>Ms. Mohite Gitanjali Anil</h3>
+        <p>84.59%</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3 style="text-align: center; color: #333;">FY TOPPERS</h3>
+    <div class="pride-container">
+      <div class="pride-card">
+        <div class="img-container">
+          <img src="images/FY_VISHRANTI.png" alt="Student 1">
+        </div>
+        <h3>Ms. Khandekar Vishranti Vilas</h3>
+        <p>91.53%</p>
+      </div>
+
+      <div class="pride-card">
+        <div class="img-container">
+          <img src="images/FY_GAYATRI.png" alt="Student 2">
+        </div>
+        <h3>Ms. Bagade Gayatri Avinash</h3>
+        <p>85.41%</p>
+      </div>
+
+      <div class="pride-card">
+        <div class="img-container">
+          <img src="images/FY_BHAKTI (1).png" alt="Student 3">
+        </div>
+        <h3>Ms. Bakade Bhakti Mahesh</h3>
+        <p>83.29%</p>
+      </div>
+    </div>
+  </section>
+
+  <!--faculty section-->
+<!-- HOD Section -->
+  <section class="hod-section">
+  <h1 class="section-title">Faculties of Department</h1>
+    <div class="hod-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Sr. No.</th>
+            <th>Name of Faculty</th>
+            <th>Photo</th>
+            <th>Position</th>
+            <th>Year of Experience</th>
+            <th>Education Degree</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Sr. No.">1. </td>
+            <td data-label="Name of Faculty">Mr.Kadam Suhas Shivajirao</td>
+            <td data-label="Photo">
+              <img src="https://unsplash.it/80/80?image=9" alt="Mr. Kazi" class="hod-image">
+            </td>
+              <td data-label="Position">H.O.D </td>
+                <td data-label="Year of Experience">14 Years </td>
+           
+            <td data-label="Education Degree">M.E. Mechanical</td>
+          </tr>
+
+          <tr>
+            <td data-label="Sr. No.">2. </td>
+            <td data-label="Name of Faculty">Mr.Adsul Amar Namdeo</td>
+            <td data-label="Photo">
+              <img src="https://unsplash.it/80/80?image=9" alt="Mr. Kazi" class="hod-image">
+            </td>
+             <td data-label="Position">Lecturer </td>
+                <td data-label="Year of Experience">13 Years </td>
+            <td data-label="Education Degree">B.E.Production. M.E. Persuing</td>
+          </tr>
+
+          <tr>
+            <td data-label="Sr. No.">3. </td>
+            <td data-label="Name of Faculty">Mr. Rasal Aniket Hanmant</td>
+            <td data-label="Photo">
+              <img src="https://unsplash.it/80/80?image=9" alt="Mr. Kazi" class="hod-image">
+            </td>
+              <td data-label="Position">Lecturer </td>
+                <td data-label="Year of Experience">13 Years </td>
+            <td data-label="Education Degree">B.E(Mechanical)</td>
+          </tr>
+
+          <tr>
+            <td data-label="Sr. No.">4. </td>
+            <td data-label="Name of Faculty">Mr. Sawant Nitin Arun</td>
+            <td data-label="Photo">
+              <img src="https://unsplash.it/80/80?image=9" alt="Mr. Kazi" class="hod-image">
+            </td>
+              <td data-label="Position">Lecturer </td>
+                <td data-label="Year of Experience">15 Years </td>
+            <td data-label="Education Degree">B.E. (Mechanical)</td>
+          </tr>
+
+          <tr>
+            <td data-label="Sr. No.">5. </td>
+            <td data-label="Name of Faculty">Ms. Shivankar Mayuri Rajendra</td>
+            <td data-label="Photo">
+              <img src="https://unsplash.it/80/80?image=9" alt="Mr. Kazi" class="hod-image">
+            </td>
+             <td data-label="Position">Lecturer </td>
+                <td data-label="Year of Experience">5 Years </td>
+            <td data-label="Education Degree">B.E. Mechanical</td>
+          </tr>
+
+          <tr>
+            <td data-label="Sr. No.">6. </td>
+            <td data-label="Name of Faculty">Ms. Phalke Snehal Sadashiv</td>
+            <td data-label="Photo">
+              <img src="https://unsplash.it/80/80?image=9" alt="Mr. Kazi" class="hod-image">
+            </td>
+             <td data-label="Position">Lecturer </td>
+                <td data-label="Year of Experience">3 Years </td>
+            <td data-label="Education Degree">B.E. Mechanical</td>
+          </tr>
+
+          <tr>
+            <td data-label="Sr. No.">7. </td>
+            <td data-label="Name of Faculty">Ms. Jagtap Hemlata Ashok</td>
+            <td data-label="Photo">
+              <img src="https://unsplash.it/80/80?image=9" alt="Mr. Kazi" class="hod-image">
+            </td>
+             <td data-label="Position">Lecturer </td>
+                <td data-label="Year of Experience">2 Years </td>
+            <td data-label="Education Degree">B.E. Mechanical</td>
+          </tr>
+
+          <tr>
+            <td data-label="Sr. No.">8. </td>
+            <td data-label="Name of Faculty">Mr. Kulkarni Sandip Suresh</td>
+            <td data-label="Photo">
+              <img src="https://unsplash.it/80/80?image=9" alt="Mr. Kazi" class="hod-image">
+            </td>
+              <td data-label="Position">Lecturer </td>
+                <td data-label="Year of Experience">8 Years </td>
+            <td data-label="Education Degree">B.E. Mechanical</td>
+          </tr>
+
+          <tr>
+            <td data-label="Sr. No.">9. </td>
+            <td data-label="Name of Faculty">Mr. Mane Rajesh Arunrao</td>
+            <td data-label="Photo">
+              <img src="https://unsplash.it/80/80?image=9" alt="Mr. Kazi" class="hod-image">
+            </td>
+              <td data-label="Position">Lab Assistant</td>
+                <td data-label="Year of Experience">15 Years </td>
+            <td data-label="Education Degree">	B.Sc.</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  </section>
+  <!-- Image Slider Start -->
+  <!-- Gallery Section (Image Slider) -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Our Department gallery</h2>
+        <p>Explore the vibrant life and facilities at ITI</p>
+      </div>
+      <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../uploads/gallery/campus.jpg" class="d-block w-100" alt="Campus Image 1" style="height: 400px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Campus Life</h5>
+              <p>Students enjoying vibrant campus activities.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../uploads/logos/modernlabs.jpg" class="d-block w-100" alt="Campus Image 2" style="height: 400px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Modern Labs</h5>
+              <p>State-of-the-art facilities for hands-on learning.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../uploads/gallery/gathering.JPG" class="d-block w-100" alt="Campus Image 3" style="height: 400px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Events</h5>
+              <p>Engaging events to foster innovation and collaboration.</p>
+            </div>
+          </div>
+           <div class="carousel-item">
+            <img src="../uploads/facilities/workshopnew.jpeg" class="d-block w-100" alt="Campus Image 3" style="height: 400px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Workshop</h5>
+              <p>Students attended a hands-on session .</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+<br>
+<div class="d-flex justify-content-center btn-container">
+    <button class="btn back-btn" onclick="window.location.href='./departments.html'">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+        </svg>
+        Back to Departments
+    </button>
+</div>
+<br>
+
+  <h2 class="section-title">Syllbus</h2>
+<!-- Syllabus -->
+<div class="container hod-section">
+    <div class="syllabus-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Scheme</th>
+            <th>Semester</th>
+            <th>Syllabus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Year">First Year</td>
+            <td data-label="Scheme">K Scheme</td>
+            <td data-label="Semester">
+              <div>I Sem</div>
+              <div>II Sem</div>
+            </td>
+            <td data-label="Syllabus">
+              <div><a href="">View</a></div>
+              <div><a href="">View</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Year">Second Year</td>
+            <td data-label="Scheme">K Scheme</td>
+            <td data-label="Semester">
+              <div>I Sem</div>
+              <div>II Sem</div>
+            </td>
+            <td data-label="Syllabus">
+              <div><a href="">View</a></div>
+              <div><a href="">View</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Year">Third Year</td>
+            <td data-label="Scheme">K Scheme</td>
+            <td data-label="Semester">
+              <div>I Sem</div>
+              <div>II Sem</div>
+            </td>
+            <td data-label="Syllabus">
+              <div><a href="">View</a></div>
+              <div><a href="">View</a></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br>
+  <!-- Footer -->
+   <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h3>ABIT Polytechnic, Satara</h3>
+        <p><strong>Address</strong></p>
+        <p>Abhaysinhraje Bhonsle Institute<br>of Technology(Polytechnic)</p>
+        <p>Shendre, Satara</p>
+        <p>Taluka-Satara</p>
+        <p>District-Satara 415002</p>
+        <p>State-Maharashtra</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h3>Abhaysinhraje Bhonsle Institute<br>of Technology(Polytechnic)</h3>
+        <p class="contact"><i class="fas fa-phone fa-lg me-2"></i> 9112287287, 02162-279661</p>
+        <p class="contact"><i class="fas fa-envelope fa-lg me-2"></i> abit@gmail.com</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/abit_polytechnic_shendre/" target="_blank" class="social-link"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="https://youtube.com/@warriorvijay?si=timFJ9s0VVYnfODr" target="_blank" class="social-link"><i class="fab fa-youtube fa-2x"></i></a>
+          <a href="https://www.facebook.com/vvct.in" target="_blank" class="social-link"><i class="fab fa-facebook-f fa-2x"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank" class="social-link"><i class="fab fa-linkedin-in fa-2x"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h3>Important Links</h3>
+        <ul>
+          <li><a href="https://dte.maharashtra.gov.in/">Directorate Of Technical Education Maharashtra</a></li>
+          <li><a href="https://msbte.ac.in/">Maharashtra State Board Of Technical Education (MSBTE)</a></li>
+          <li><a href="https://share.google/DAoZvw3Pbt1vlnCT1" target="_blank">Maharashtra Government</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../departments/departments.html">Departments</a></li>
+          <li><a href="../admission/feestructure.html">Fee Structure</a></li>
+          <li><a href="../admission/schlorship.html">Scholarships</a></li>
+          <li><a href="../academics/examination.html">Examination</a></li>
+          <li><a href="../academics/facilities.html">Facilities</a></li>
+          <li><a href="../gallery/blog.html">Blogs</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 5 (Map) -->
+      <div class="footer-col">
+        <h3>Location</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.515198832577!2d74.01496367522522!3d17.625741595894763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc23a635c9b45ef%3A0x7ffc37f6c8b9e52a!2sAbhaysinhraje%20Bhonsle%20Institute%20Of%20Technology%20(Polytechnic)!5e0!3m2!1sen!2sin!4v1750669049691!5m2!1sen!2sin" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="copyright">
+      Copyright © 2025 Abhaysinhraje Bhonsle Institute Of Technology (Polytechnic), Shahunagar-Shendre. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
